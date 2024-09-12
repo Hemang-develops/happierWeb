@@ -1,1 +1,13 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+    <h1>Project Dashboard</h1>
+
+    <div class="projects" *ngFor="let project of projects">
+        <div class="project-container">
+            <h3>Project Name: {{project.name}}</h3>
+            <p>Budget: {{project.totalBudget | currency}}</p>
+            <p>Collaborator: {{project.collaboratorEmail}}</p>
+            <button >View Project</button>
+        </div>
+    </div>
+    <button>Create new Project</button>
+</div>
