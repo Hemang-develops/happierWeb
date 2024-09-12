@@ -1,13 +1,14 @@
-<div class="dashboard-container">
+<div>
     <h1>Project Dashboard</h1>
-
-    <div class="projects" *ngFor="let project of projects">
-        <div class="project-container">
-            <h3>Project Name: {{project.name}}</h3>
-            <p>Budget: {{project.totalBudget | currency}}</p>
-            <p>Collaborator: {{project.collaboratorEmail}}</p>
-            <button >View Project</button>
+    <div class="dashboard-container">
+        <div class="projects" *ngFor="let project of projects">
+            <div class="project-container">
+                <h4><strong>Project Name</strong>: {{project.name}}</h4>
+                <p><strong>Budget</strong>: {{project.totalBudget | currency}}</p>
+                <p><strong>Collaborator</strong>: {{project.collaboratorEmail}}</p>
+                <button class="view-project" [routerLink]="['/project/', project.id]">View Project</button>
+            </div>
         </div>
     </div>
-    <button>Create new Project</button>
+    <button class="create-new-project">Create new Project</button>
 </div>
