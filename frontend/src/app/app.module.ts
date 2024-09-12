@@ -9,6 +9,7 @@ import { ProjectListComponent } from './components/project-list/project-list.com
 import { ProjectDetailComponent } from './components/project-detail/project-detail.component';
 import { BudgetComponent } from './components/budget/budget.component';
 import { PositionComponent } from './components/position/position.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PositionComponent } from './components/position/position.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
