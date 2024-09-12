@@ -2,18 +2,18 @@
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <h1>Login</h1>
 
-          <div class="mb-3">
+          <div class="input-container">
               <label for="email" class="form-label">Email</label>
-              <input id="email" type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <input id="email" type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': f.email.errors }" />
+              <div *ngIf="f.email.touched && f.email.errors" class="invalid-feedback">
                   <small *ngIf="f.email.errors.required">Email is required</small>
                   <small *ngIf="f.email.errors.email">Email is not valid</small>
               </div>
           </div>
-          <div class="mb-3">
+          <div class="input-container">
               <label for="password" class="form-label">Password</label>
-              <input id="password" type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-              <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <input id="password" type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': f.password.errors }" />
+              <div *ngIf="f.password.touched && f.password.errors" class="invalid-feedback">
                   <small *ngIf="f.password.errors.required">Password is required</small>
                   <small *ngIf="f.password.errors.minLength">Password must be at least 8 characters</small>
               </div>
