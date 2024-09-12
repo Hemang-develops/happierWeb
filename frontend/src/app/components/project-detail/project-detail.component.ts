@@ -14,6 +14,15 @@ export class ProjectDetailComponent implements OnInit {
     { title: 'Designer', salary: 60000 }
   ];
 
+  project = {
+    name: 'Project 1',
+    collaboratorEmail: 'demo@mail.com',
+    totalBudget: 1000,
+    positions: this.positions,
+    remainingBudget: 200,
+    utilizedBudget: 800
+  }
+
   constructor() { }
 
   ngOnInit(): void {
