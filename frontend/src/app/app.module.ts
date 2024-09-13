@@ -10,7 +10,6 @@ import { ProjectDetailComponent } from './components/project-detail/project-deta
 import { BudgetComponent } from './components/budget/budget.component';
 import { PositionComponent } from './components/position/position.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
@@ -28,7 +27,6 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
   ],
   providers: [
     provideAnimationsAsync()

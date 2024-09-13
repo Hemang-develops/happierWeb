@@ -14,30 +14,33 @@
             </svg>
         </div>
     </div>
-    <div class="">
-    <div class="navbar">
-        <h6>Workforce Planning</h6>
-    </div>
-    <div class="planning">
-        <h4>Planning Projects</h4>
-        <button class="add-project">+</button>
-    </div>
     <div class="dashboard-container">
-        <div class="projects" *ngFor="let project of projects">
+        <div class="navbar">
+            <h3>Workforce Planning</h3>
+        </div>
+        <div class="container">
+            <div class="planning">
+                <h2>Planning Projects</h2>
+                <button class="add-project">+</button>
+            </div>
             <div class="project-container">
-                <div class="top-part">
-                    <p class="title"><strong>Project: {{project.name}}</strong></p>
-                    <p class="subtitle"><strong>Project: {{project.name}}</strong></p>
+                <div class="projects" *ngFor="let project of projects">
+                    <div class="top part">
+                        <p class="title"><strong>Project: {{project.name}}</strong></p>
+                        <small class="subtitle">Project: {{project.name}}</small>
+                    </div>
+                    <div class="bottom part">
+                        <small><strong>Budget</strong></small>
+                        <small class="subtitle">{{project.totalBudget | currency}}</small>
+                        <br>
+                        <small><strong>Total No. of Positions</strong></small>
+                        <small class="subtitle">{{project.collaboratorEmail}}</small>
+                        <br>
+                        <small><strong>Co-planers</strong></small>
+                        <small class="subtitle">{{project.collaboratorEmail}}</small>
+                    </div>
                 </div>
-                <p><strong>Budget</strong></p>
-                <p class="subtitle">{{project.totalBudget | currency}}</p>
-                <p><strong>Total No. of Positions</strong></p>
-                <p class="subtitle">{{project.collaboratorEmail}}</p>
-                <p><strong>Co-planers</strong></p>
-                <p class="subtitle">{{project.collaboratorEmail}}</p>
             </div>
         </div>
-    </div>
-    <button class="create-new-project">Create new Project</button>
     </div>
 </div>
