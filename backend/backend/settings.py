@@ -41,8 +41,11 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "corsheaders",
-    'rest_framework',           # Django REST framework
-    'core',                     # Your custom app
+    'rest_framework',
+    'core',
+    # 'accounts.apps.AccountsConfig',
+    'accounts',
+    'public'
 ]
 
 ASGI_APPLICATION = 'backend.asgi.application'
@@ -134,3 +137,12 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
+}
+
+# LOGIN_REDIRECT_URL = '/'
