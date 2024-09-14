@@ -7,6 +7,10 @@ html, body {
     box-sizing: border-box;
 }
 
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+
 /* Center the modal with a fixed height and width */
 .modal-content {
     padding: 2rem;
@@ -27,10 +31,8 @@ h3 {
 }
 
 hr.separator {
-    border: 0;
-    height: 1px;
-    background-color: #ddd;
     margin: 1rem 0;
+    border: 1px solid #DEE1E6
 }
 
 .formGroup {
@@ -60,8 +62,13 @@ input.form-control:focus {
 }
 
 .input-container {
-    margin-bottom: 1.5rem;
-}
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-container:nth-last-child(n+2) {
+    margin-bottom: 2rem;
+  }
 
 .invalid-feedback {
     color: red;
@@ -102,7 +109,6 @@ input.form-control:focus {
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 .closeBtn {

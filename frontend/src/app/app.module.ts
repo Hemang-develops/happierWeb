@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProjectListComponent } from './components/project-list/project-list.component';
-import { ProjectDetailComponent } from './components/project-detail/project-detail.component';
 import { BudgetComponent } from './components/budget/budget.component';
 import { PositionComponent } from './components/position/position.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,6 +14,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { PlanningProjectModalComponent } from './components/planning-project-modal/planning-project-modal.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { TopbarComponent } from './components/topbar/topbar.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -22,10 +26,11 @@ import { PlanningProjectModalComponent } from './components/planning-project-mod
     LoginComponent,
     DashboardComponent,
     ProjectListComponent,
-    ProjectDetailComponent,
     BudgetComponent,
     PositionComponent,
-    PlanningProjectModalComponent
+    PlanningProjectModalComponent,
+    SidebarComponent,
+    TopbarComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +40,9 @@ import { PlanningProjectModalComponent } from './components/planning-project-mod
     BrowserAnimationsModule,
     HttpClientModule,
     MatDialogModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSelectModule
   ],
   providers: [
     provideAnimationsAsync()

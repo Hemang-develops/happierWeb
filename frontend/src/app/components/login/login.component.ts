@@ -10,17 +10,15 @@ import { Router } from '@angular/router';
 })
 
 export class LoginComponent implements OnInit{
-  constructor (private router : Router, private fb: FormBuilder){}
-  // Declare the properties that hold the form data
   loginForm !:FormGroup;
-  // email: string = '';
-  // password: string = '';
+  constructor (private router : Router, private fb: FormBuilder){
+      this.loginForm = this.fb.group({
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required, Validators.minLength(8)]]
+      });
+  }
 
   ngOnInit(): void {
-    this.loginForm = this.fb.group({
-      email: ['',[Validators.required, Validators.email]],
-      password: ['', Validators.required, Validators.minLength(8)] // todo password validations
-    })
   }
 
   // Method to handle form submission

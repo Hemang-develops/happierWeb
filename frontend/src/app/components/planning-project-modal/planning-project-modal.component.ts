@@ -9,17 +9,18 @@ import { Router } from '@angular/router';
   styleUrl: './planning-project-modal.component.scss'
 })
 export class PlanningProjectModalComponent implements OnInit{
-
-  constructor(public dialogRef: MatDialogRef<PlanningProjectModalComponent>, private fb: FormBuilder, private router: Router){}
-
   planningProjectForm !: FormGroup;
 
-  ngOnInit(): void {
+  constructor(public dialogRef: MatDialogRef<PlanningProjectModalComponent>, private fb: FormBuilder, private router: Router){
     this.planningProjectForm = this.fb.group({
       projectName: ['',[Validators.required]],
       projectDescription: ['', Validators.required],
       coplanner: ['']
     })
+  }
+
+
+  ngOnInit(): void {
   }
 
   onModalClose(): void {
@@ -28,14 +29,15 @@ export class PlanningProjectModalComponent implements OnInit{
 
   
   get f(){
-    return this.planningProjectForm?.controls;
+    return this.planningProjectForm.controls;
   }
 
   onSubmit(){
     if(this.planningProjectForm.valid){
       console.log('Form value:', this.planningProjectForm.value);
     }
-    this.router.navigate(['/dashboard']);
+    this.onModalClose()
+    this.router.navigate(['/budget']);
   }
 
 }
