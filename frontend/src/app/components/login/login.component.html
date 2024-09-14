@@ -29,11 +29,10 @@
             </svg>
         </div>
     </div>
-    <h1>Login</h1>
+    <h3>Login</h3>
     <form class="formGroup" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="input-container">
             <label for="email" class="form-label">Email ID</label>
-            <br>
             <input id="email" type="email" formControlName="email" class="form-control"
                 placeholder="Enter your email ID" [ngClass]="{ 'is-invalid': f.email.errors }" />
             <div *ngIf="f.email.touched && f.email.errors" class="invalid-feedback">
@@ -43,7 +42,6 @@
         </div>
         <div class="input-container">
             <label for="password" class="form-label">Password</label>
-            <br>
             <input id="password" type="password" placeholder="Enter your password" formControlName="password"
                 class="form-control" [ngClass]="{ 'is-invalid': f.password.errors }" />
             <div *ngIf="f.password.touched && f.password.errors" class="invalid-feedback">
@@ -53,7 +51,7 @@
         </div>
         <div class="btn-container">
             <button type="submit" [disabled]="loginForm.valid" class="btn btn-primary">
-                Login
+                <strong>Login</strong>
             </button>
         </div>
     </form>
