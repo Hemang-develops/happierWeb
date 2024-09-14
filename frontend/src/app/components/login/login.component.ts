@@ -13,8 +13,6 @@ export class LoginComponent implements OnInit{
   constructor (private router : Router, private fb: FormBuilder){}
   // Declare the properties that hold the form data
   loginForm !:FormGroup;
-  loading = false;
-  submitted = false;
   // email: string = '';
   // password: string = '';
 
@@ -28,10 +26,8 @@ export class LoginComponent implements OnInit{
   // Method to handle form submission
   onSubmit() {
     if(this.loginForm.valid){
-        this.submitted = true;
       console.log('Form value:', this.loginForm.value);
     }
-    this.loading = true;
     this.router.navigate(['/dashboard']);
     // Add logic to handle the login action, e.g., call an authentication service
   }

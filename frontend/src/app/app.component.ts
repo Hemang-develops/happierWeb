@@ -7,7 +7,7 @@ import { PublicService } from './services/public.service';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
-  title = 'Frontend';
+  title = 'Happier Work';
   msg:any;
 
   constructor(private pService : PublicService){}

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PublicService {
-  apiURL = 'https://localhost:8000/'
+  apiURL = 'http://localhost:8000/'
   constructor(private http : HttpClient) { }
 
   getMessage(){

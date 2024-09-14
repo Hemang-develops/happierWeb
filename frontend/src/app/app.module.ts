@@ -12,6 +12,9 @@ import { PositionComponent } from './components/position/position.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { PlanningProjectModalComponent } from './components/planning-project-modal/planning-project-modal.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +24,17 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     ProjectListComponent,
     ProjectDetailComponent,
     BudgetComponent,
-    PositionComponent
+    PositionComponent,
+    PlanningProjectModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatDialogModule,
   ],
   providers: [
     provideAnimationsAsync()

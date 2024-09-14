@@ -1,0 +1,39 @@
+<div class="modal-content">
+  <div class="header">
+    <h3>Create Planning Project</h3>
+    <div>
+      <button class="closeBtn" (click)="onModalClose()">X</button>
+    </div>
+  </div>
+  <hr class="separator">
+  <div>
+    <form class="formGroup" [formGroup]="planningProjectForm" (ngSubmit)="onSubmit()">
+      <div class="input-container">
+        <label for="projectName" class="form-label">Project Name <span class="red">*</span></label>
+        <input class="form-control" placeholder="Enter budget in INR" formControlName="projectName" required>
+        <div *ngIf="f.projectName.touched && f.projectName.errors" class="invalid-feedback">
+          <small class="red" *ngIf="f.projectName.errors.required">Project Name is required</small>
+        </div>
+      </div>
+
+      <div class="input-container">
+        <label for="projectDescription" class="form-label">Project Description <span class="red">*</span></label>
+        <input id="projectDescription" formControlName="projectDescription" class="form-control"
+          placeholder="Enter description" [ngClass]="{ 'is-invalid': f.email.errors }" />
+        <div *ngIf="f.projectDescription.touched && f.projectDescription.errors" class="invalid-feedback">
+          <small class="red" *ngIf="f.projectDescription.errors.required">Project Description is required</small>
+        </div>
+      </div>
+
+      <div class="input-container">
+        <label for="projectDescription" class="form-label">Co-planner</label>
+        <input id="coplanner" formControlName="coplanner" class="form-control" placeholder="Add any co-planner" />
+      </div>
+      <hr class="separator">
+      
+      <div class="btn-container">
+      <button type="submit" class="submitbutton"><strong>Create</strong></button>
+      </div>
+    </form>
+  </div>
+</div>

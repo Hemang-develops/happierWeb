@@ -21,7 +21,7 @@
         <div class="container">
             <div class="planning">
                 <h2>Planning Projects</h2>
-                <button class="add-project">+</button>
+                <button class="add-project" mat-button (click)="openPlanningProjectModal()">+</button>
             </div>
             <div class="project-container">
                 <div class="projects" *ngFor="let project of projects">
